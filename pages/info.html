@@ -35,7 +35,8 @@
         <form action="">
             <input type="checkbox" name="{{ @desserts }}" value="{{ @chocolate}}">Chocolate Mousse</br>
             <input type="checkbox" name="{{ @desserts }}" value="{{ @vanilla}}">Vanilla Custard</br>
-            <input type="checkbox" name="{{ @desserts }}" value="{{ @strawberry}}">Strawberry Shortcake
+            <input type="checkbox" name="{{ @desserts }}" value="{{ @strawberry}}">Strawberry Shortcake</br>
+            
         </form>
         
         <repeat group="{{ @desserts }}"
@@ -43,9 +44,24 @@
                 value="{{ @value }}">
             <input type='checkbox' value='{{ @key }}'/>{{ @value}}</br>
         </repeat>
-            
+        
+        <!-- conditional Content-->
+        <h3>Message</h3>
+        <check if="{{ @perferredCustomer }}">
+            <strong>Thank you for being a preferred customer!</strong>
+        </check>
+        
+        <check if="{{ @lastLogin > strtotime('-1 month') }}">
+            <true>Welcome back!</true>
+            <false>Its been a while!</false>
+        </check>
+        
+        <!--printing objects-->
+        <h3>My Pet</h3>
+            <p>{{ @myPet->getName() }}</p>
+            <p>{{ @myPet->getColor() }}</p>
       
- 
+        <check if"{{ }}"
         
     </body>
 </html>

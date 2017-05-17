@@ -35,8 +35,29 @@
         <form action="">
             <input type="checkbox" name="<?= $desserts ?>" value="<?= $chocolate ?>">Chocolate Mousse</br>
             <input type="checkbox" name="<?= $desserts ?>" value="<?= $vanilla ?>">Vanilla Custard</br>
-            <input type="checkbox" name="<?= $desserts ?>" value="<?= $strawberry ?>">Strawberry Shortcake
+            <input type="checkbox" name="<?= $desserts ?>" value="<?= $strawberry ?>">Strawberry Shortcake</br>
+            
         </form>
+        
+        <?php foreach (($desserts?:[]) as $key=>$value): ?>
+            <input type='checkbox' value='<?= $key ?>'/><?= $value ?></br>
+        <?php endforeach; ?>
+        
+        <!-- conditional Content-->
+        <h3>Message</h3>
+        <?php if ($perferredCustomer): ?>
+            <strong>Thank you for being a preferred customer!</strong>
+        <?php endif; ?>
+        
+        <?php if ($lastLogin > strtotime('-1 month')): ?>
+            Welcome back!
+            <?php else: ?>Its been a while!
+        <?php endif; ?>
+        
+        <!--printing objects-->
+        <h3>My Pet</h3>
+            <p><?= $myPet->getName() ?></p>
+            <p><?= $myPet->getColor() ?></p>
       
  
         

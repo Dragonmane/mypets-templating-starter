@@ -27,6 +27,15 @@
     $f3->set('addresses', array('primary' => '1000 Apple Ln. Seattle, Wa 98999', 'secondary' => '2510 100th Court Tac, WA 90000'));
     $f3->set('desserts', array('chocolate' => 'Chocolate Mousse', 'vanilla' => 'vanilla Custard', "starwberry" => "Strawberry Shortcake"));
     
+    //conditional content
+    $f3->set('preferredCustomer', true);
+    $f3->set('lastLogin', strtotime('-1 week'));
+    
+    //objects
+    $pet = new Pet('Fido', 'pink');
+    $pet = new Pet('Henrietta', 'purple');
+    $f3->set('myPet', $pet);
+    
     
     
     //load a template
